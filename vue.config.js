@@ -1,4 +1,4 @@
-//vue.confing.js
+//vue.config.js
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
       ? '/honey_room/'
