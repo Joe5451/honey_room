@@ -84,8 +84,8 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  // mode: 'history',
+  // base: process.env.BASE_URL,
   routes,
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) { // 透過瀏覽器的前進後退觸發
