@@ -1,0 +1,70 @@
+.dashboard-nav {
+    width: 230px;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    .header, .user-panel {
+        border-bottom: 1px solid $secondary;
+    }
+
+    .dashboard-menu {
+        .dashboard-menu-item {
+            a {
+                display: block;
+                padding: 8px 12px;
+                color: $gray-600;
+
+                &.router-link-exact-active {
+                    color: $light;
+                }
+
+                i {
+                    margin-right: 0.5rem;
+                }
+
+                &:hover {
+                    color: $light;
+                    background: $gray-600;
+                }
+            }
+        }
+    }
+    label {
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        cursor: pointer;
+    }
+}
+
+#dashboard-nav-toggle:checked {
+    & + .dashboard-nav {
+        transform: translateX(0);
+
+        @media (max-width: 1200px) {
+            & + .bg-mask {
+                top: 0;
+                left: 0;
+                z-index: 9;
+                background: rgba(0,0,0,.3);
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        & ~ .main-col {
+            margin-left: 230px;
+        }
+    }
+}
+
+.main-col {
+    transition: all 0.3s;
+    min-height: 100vh;
+}

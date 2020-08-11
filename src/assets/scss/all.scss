@@ -1,0 +1,104 @@
+@import "~bootstrap/scss/functions"; // 套用變數的方法
+@import "./helpers/_variables"; // 有上面 functions，變數才能正確啟用
+@import "~bootstrap/scss/bootstrap";
+//components
+@import "./components/navbar.scss";
+//pages
+@import "./pages/home";
+@import "./pages/products.scss";
+@import "./pages/dashboard.scss";
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $dark;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.textStyle {
+    line-height: 1.5;
+    letter-spacing: 0.5rem;
+}
+
+
+.l-section {
+    margin-top: 70px;
+    .l-section-title {
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 1rem;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 3rem;
+            height: 5px;
+            background-color: $warning;
+        }
+    }
+}
+
+.breadcrumb {  //products, singleProduct
+    background: transparent;
+    padding-bottom: 0px;
+
+    .breadcrumb-item {
+        a {
+            color: $secondary;
+            display: block;
+            position: relative;
+            padding-bottom: 0.25rem;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                border-bottom: 2px solid $dark;
+                transition: all 0.2s;
+            }
+            &:hover {
+                color: $dark;
+                &:after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+html {
+    overflow: overlay;
+    &::-webkit-scrollbar {
+        width: 10px;
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,.3); 
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0,0,0,.5); 
+    }
+}

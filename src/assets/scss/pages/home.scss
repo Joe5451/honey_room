@@ -1,0 +1,125 @@
+.new-list-group {
+    height: 296px;
+    overflow-y: hidden;
+    &:hover {
+        overflow-y: scroll;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background: #fff;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,.1); 
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0,0,0,.2); 
+    }
+
+    .new-list-group-item {
+        cursor: pointer;
+        &:hover {
+            background: #f3f3f3;
+            color: #4682b4;
+        }
+    }
+}
+
+.productCategory-container {
+    .img-container {
+        height: 320px;
+        overflow: hidden;
+        position: relative;
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+        a {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: linear-gradient(180deg, transparent 65%, rgba(0,0,0,.5));
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 0.3s;
+                display: block;
+            }
+
+            h3 {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                color: #fff;
+                margin: 0;
+                padding: 0.5rem 0;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+.about {
+    .background {
+        background-image: url('assets/image/banner4.jpg');
+        background-position: center;
+        background-size: cover;
+        .container {
+            .content-container {
+                background: rgba(255,255,255,0.5);
+                max-width: 500px;
+            }
+        }
+    }
+}
+
+.customer-comment {
+    padding-left: 90px;
+    position: relative;
+    margin-bottom: 1rem;
+    img {
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 10px;
+    }
+
+    .alert {
+        position: relative;
+        height: 100%;
+        &:before {
+            content: '';
+            display: block;
+            border-width: 10px 16px;
+            border-style: solid;
+            border-color: transparent #e2e3e5 transparent transparent;
+            position: absolute;
+            right: 100%;
+        }
+    }
+}

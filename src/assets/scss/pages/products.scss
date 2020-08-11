@@ -1,0 +1,36 @@
+.categories-list {
+    .categories-list-item {
+        position: relative;
+        left: 0;
+        text-align: center;
+        border: 1px solid $dark;
+        border-radius: 5px;
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &.active {
+            background: $dark;
+            color: $light;
+            left: 15px;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                right: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                border-width: 5px 0 5px 15px;
+                border-color: transparent transparent transparent $dark;
+                border-style: solid;
+            }
+        }
+
+        &:hover {
+            background: $dark;
+            color: $light;
+        }
+    }
+}
