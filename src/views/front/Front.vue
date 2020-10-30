@@ -7,6 +7,7 @@
             <!-- 這是最簡單的方式，還有其它的方式 -->
             <router-view :key="$route.fullPath" />
         </main>
+        <ToolBar />
         <Footer class="mt-5" />
     </div>
 </template>
@@ -14,11 +15,13 @@
 <script>
 import Navbar from '../../components/front/Navbar'
 import Footer from '../../components/front/Footer'
+import ToolBar from '../../components/front/ToolBar'
 
 export default {
     components: {
         Navbar,
-        Footer
+        Footer,
+        ToolBar,
     }
 }
 </script>
