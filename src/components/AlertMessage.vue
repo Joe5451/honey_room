@@ -36,5 +36,22 @@ export default {
     top: 60px;
     right: 20px;
     z-index: 100;
+    opacity: 0.9;
+}
+
+.alert-success {
+    background: #f89406;
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .message-alert {
+        width: calc(100% - 30px);
+        top: auto;
+        right: auto;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+    }
 }
 </style>

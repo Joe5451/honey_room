@@ -44,11 +44,11 @@ Vue.use(VueRouter)
         name: 'Cart',
         component: () => import('../views/front/Cart.vue')
       },
-      {
-        path: 'customerinfo',
-        name: 'CustomerInfo',
-        component: () => import('../views/front/CustomerInfo.vue')
-      },
+      // {
+      //   path: 'customerinfo',
+      //   name: 'CustomerInfo',
+      //   component: () => import('../views/front/CustomerInfo.vue')
+      // },
       {
         path: 'payment/:orderId',
         name: 'Payment',
