@@ -9,36 +9,55 @@
 
         <div class="showCart">
             <h3>我的購物車</h3>
-            <div class="cart-list my-1 ">
-                <table class="w-100">
-                    <thead>
-                        <tr>
-                            <td>品項</td>
-                            <td>數量</td>
-                            <td>金額</td>
-                            <td>刪除</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="n in 10" :key="n">
-                            <td>特級巧克力蛋糕</td>
-                            <td>7份</td>
-                            <td>$1750</td>
-                            <td>
-                                <button class="btn text-danger"><i class="far fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div v-if="cart.length>0">
+                <div class="cart-list my-1 ">
+                    <table class="w-100">
+                        <thead>
+                            <tr>
+                                <td>品項</td>
+                                <td>數量</td>
+                                <td>金額</td>
+                                <td>刪除</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in cart" :key="item.product.productId">
+                                <td>{{ item.product.title }}</td>
+                                <td>{{ item.qty }}{{ item.product.unit }}</td>
+                                <td>${{ item.product.price*item.qty }}</td>
+                                <td>
+                                    <button class="btn text-danger" @click="deleteCart(item.product.productId)">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="totalPrice my-1">總計: ${{ total }}</div>
+                <router-link to="/checkout" class="btn checkout w-100 bg-danger text-light border-0 p-1 my-2">結帳去</router-link> 
             </div>
-            <div class="totalPrice my-1">總計: $1700</div>
-            <button class="checkout w-100 bg-danger text-light border-0 p-1 my-2">結帳去</button>
+            <div v-else>
+                <div class="noCart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>你的購物車沒有商品喔!</p>
+                    <router-link to="/products" @click.native="changeActive('')" class="btn checkout w-100 bg-danger text-light border-0 p-1 my-2">現在就去逛逛</router-link> 
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    computed: {
+        cart () {
+            return this.$store.state.cart.cart;
+        },
+        total() {
+            return this.$store.state.cart.total;
+        },
+    },
     methods: {
         toggleCart () {
             const shoppingBtn = document.querySelector('.shopping-btn');
@@ -46,6 +65,15 @@ export default {
 
             shoppingBtn.classList.toggle('active');
             showCart.classList.toggle('active');
+        },
+        getCart () {
+            this.$store.dispatch('getCart');
+        },
+        deleteCart (id) {
+            this.$store.dispatch('deleteCart', id);
+        },
+        changeActive(active) {
+            this.$store.state.active = active;
         }
     },
     mounted () {
@@ -57,8 +85,8 @@ export default {
             } else {
                 topBtn.classList.remove('active');
             }
-        })
-    }
+        });
+    },
 }
 </script>
 
@@ -227,6 +255,12 @@ export default {
             }
         }
 
+        .noCart {
+            padding: 10px;
 
+            i {
+                font-size: 24px;
+            }
+        }
     }
 </style>

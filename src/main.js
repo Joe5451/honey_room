@@ -55,6 +55,8 @@ router.beforeEach((to, from, next) => {
   const isAuthenticated = fb.auth().currentUser;
 
   $('#navbar-nav-toggle').prop('checked', false); // 關閉 nav-menu toggle
+  $('.shoppingBtn').removeClass('active');
+  $('.showCart').removeClass('active');
 
   if(requiresAuth && !isAuthenticated) {
     next('/signin');

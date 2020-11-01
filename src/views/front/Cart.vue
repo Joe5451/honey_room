@@ -128,7 +128,7 @@ export default {
         },
         total() {
             return this.$store.state.cart.total;
-        }
+        },
     },
     data() {
         return {
@@ -181,15 +181,6 @@ export default {
                     this.$store.dispatch('updateMessage', {message: '請正確完成表單', status: 'danger'});
                 }
             });
-
-            // db.collection('cart').get().then(res => {  //刪除購物車中所有商品
-            //     res.forEach(item => {
-            //         item.ref.delete();
-            //         vm.$store.dispatch('getCart');
-            //     });
-            // });
-
-            // this.$router.push('/checkout/payment/sZOTwVzewih2tHlqowsL');
         }
     },
     created() {

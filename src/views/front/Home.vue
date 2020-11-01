@@ -13,7 +13,19 @@
                         <div>
                             <h5 class="bg-dark text-light py-3 text-center font-weight-bold">最新消息</h5>
                             <ul class="new-list-group">
-                                <li class="new-list-group-item border-bottom px-3 py-2" v-for="n in 10" :key="n">Lorem, ipsum dolor{{n}}.</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">指定商品買一送一</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">消費即送半價商品兌換卷</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">歡慶開店上線，運費優惠 $50</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">指定商品買一送一</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">消費即送半價商品兌換卷</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">歡慶開店上線，運費優惠 $50</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">指定商品買一送一</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">消費即送半價商品兌換卷</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">歡慶開店上線，運費優惠 $50</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">指定商品買一送一</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">消費即送半價商品兌換卷</li>
+                                <li class="new-list-group-item border-bottom px-3 py-2">歡慶開店上線，運費優惠 $50</li>
+
                             </ul>
                         </div>
                     </div>

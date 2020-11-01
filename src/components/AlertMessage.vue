@@ -35,7 +35,7 @@ export default {
     position: fixed;
     top: 60px;
     right: 20px;
-    z-index: 100;
+    z-index: 200;
     opacity: 0.9;
 }
 

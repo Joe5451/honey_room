@@ -11,6 +11,7 @@ export default {
     mutations: {
         GETCART(state, data) {
             state.cart = data;
+            // console.log('cart: ', data);
             this.commit('CALTOTAL', data);
         },
         CALTOTAL(state, data) {
